@@ -26,7 +26,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Future<Map<String, dynamic>> fetchPokemon() async {
-    final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/1'));
+    final response =
+        await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/1'));
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
